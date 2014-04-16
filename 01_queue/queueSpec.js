@@ -60,5 +60,4 @@ describe("queue", function() {
     expect(queue.countByTraversing()).toEqual(queue.size());
   });
 
-  // Hey! Add tests here that thoroughly test the functionality of your queue
 });
