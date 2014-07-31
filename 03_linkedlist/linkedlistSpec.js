@@ -10,13 +10,13 @@ describe("linkedList", function() {
     expect(linkedList.removeHead instanceof Function).toBeTruthy();
     expect(linkedList.search instanceof Function).toBeTruthy();
   });
-  
+
   it("should start out with head and tail undefined", function () {
     expect(linkedList.head).toEqual(undefined);
     expect(linkedList.tail).toEqual(undefined);
     expect(linkedList.removeHead()).toEqual(undefined);
   });
-  
+
   it("should not add an undefined node", function() {
     expect(linkedList.addToTail()).toEqual(undefined);
   });
@@ -91,10 +91,10 @@ describe("linkedList", function() {
     linkedList.addToTail('three');
     linkedList.addToTail('four');
     linkedList.addToTail('one');
-    expect(linkedList.search('two')).toEqual(true);
-    expect(linkedList.search('sdd')).toEqual(false);
-    expect(linkedList.search('one')).toEqual(true);
-    expect(linkedList.search('four')).toEqual(true);
+    expect(linkedList.search('two')).toEqual('two');
+    expect(linkedList.search('sdd')).toEqual(null);
+    expect(linkedList.search('one')).toEqual('one');
+    expect(linkedList.search('four')).toEqual('four');
   });
 
 });
