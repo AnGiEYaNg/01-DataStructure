@@ -36,7 +36,7 @@ describe("Hash", function() {
   it("Should overwrite keys", function() {
     hash.set('foo','bar1');
     hash.set('foo','bar2');
-    expect(hash.get('key')).toEqual('bar2');
+    expect(hash.get('foo')).toEqual('bar2');
   })
 
   it("should return booleans for #hasKey", function() {
