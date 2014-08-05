@@ -5,6 +5,10 @@ describe("Hash", function() {
     hash = new Hash();
   });
 
+  it("should have 25 buckets",function() {
+    expect(hash.numBuckets).toEqual(25);
+  });
+
   it("should have methods named 'set', 'get', and 'hasKey'", function() {
     expect(hash.set instanceof Function).toBeTruthy();
     expect(hash.get instanceof Function).toBeTruthy();
@@ -33,11 +37,18 @@ describe("Hash", function() {
     expect(hash.get('this is a very different string')).toEqual(44.4);
   });
 
+  it("should handle collisions", function() {
+    hash.set('foo','bar1');
+    hash.set('ofo','bar2');
+    expect(hash.get('ofo')).toEqual('bar2');
+    expect(hash.get('foo')).toEqual('bar1');
+  });
+
   it("Should overwrite keys", function() {
     hash.set('foo','bar1');
     hash.set('foo','bar2');
     expect(hash.get('foo')).toEqual('bar2');
-  })
+  });
 
   it("should return booleans for #hasKey", function() {
     hash.set('foobar','fluf cats')

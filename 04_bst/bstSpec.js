@@ -5,24 +5,26 @@ describe("binarySearchTree", function() {
     tree = new BinarySearchTree(20);
   });
 
-  it("should have methods named 'insert', 'contains', and 'depthFirstMap", function() {
+  it("should have methods named 'insert', 'contains', and 'depthFirstForEach", function() {
     expect(tree.insert).toEqual(jasmine.any(Function));
     expect(tree.contains).toEqual(jasmine.any(Function));
-    expect(tree.depthFirstMap).toEqual(jasmine.any(Function));
+    expect(tree.depthFirstForEach).toEqual(jasmine.any(Function));
+    expect(tree.breadthFirstForEach).toEqual(jasmine.any(Function));
+    expect(tree.size).toEqual(jasmine.any(Function));
   });
-  
+
   it("should take values and report size correctly", function () {
     tree.insert(12);
     expect(tree.size()).toEqual(2);
   });
-  
+
   it("should make nodes on the correct branches", function () {
     tree.insert(12);
     tree.insert(22);
     expect(tree.left.value).toEqual(12);
     expect(tree.right.value).toEqual(22);
   });
-  
+
   it("should sort values when adding", function() {
     expect(tree.value).toEqual(20);
     tree.insert(15);
@@ -85,7 +87,7 @@ describe("binarySearchTree", function() {
     expect(tree.contains(32)).toEqual(false);
   });
 
-  it("should run depth first when depthFirstMap() is run", function() {
+  it("should run depth first when depthFirstForEach() is run", function() {
     tree.insert(15);
     tree.insert(25);
     tree.insert(5);
@@ -106,11 +108,11 @@ describe("binarySearchTree", function() {
     tree.insert(31);
     tree.insert(34);
     var depth = [];
-    tree.depthFirstMap(function(val){depth.push(val);});
+    tree.depthFirstForEach(function(val){depth.push(val);});
     expect(depth).toEqual([20,15,5,0,1,14,13,12,11,17,25,21,28,50,45,30,35,33,31,34]);
   });
 
-  it("should run breadth first when breadthFirstMap() is run", function() {
+  it("should run breadth first when breadthFirstForEach() is run", function() {
     tree.insert(15);
     tree.insert(25);
     tree.insert(5);
@@ -131,7 +133,7 @@ describe("binarySearchTree", function() {
     tree.insert(31);
     tree.insert(34);
     var depth = [];
-    tree.breadthFirstMap(function(val){depth.push(val);});
+    tree.breadthFirstForEach(function(val){depth.push(val);});
     expect(depth).toEqual([20,15,25,5,17,21,28,0,14,50,1,13,45,12,30,11,35,33,31,34]);
   });
 });
