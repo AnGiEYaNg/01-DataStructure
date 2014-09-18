@@ -7,6 +7,6 @@ In this workshop, we are going to be writing the JavaScript implementations of s
 You should write your code in the classical JavaScript style. The "prototypal" method of JS Object Oriented JS is up and coming but it's still important we know how to work in Classical JavaScript Object Oriented code.
 
 
-###Important Tip for Stack & Queue
+###Important Tip for Queue
 
-Since the purpose of this exercise is to implement a Stack and Queue class, you may not use JavaScript's built in push/pop/shift/unshift functions. You can use an Object or Array to store your data and keep a head and tail pointer that moves around when functions like enqueue and dequeue are called.
+Since the purpose of this exercise is to implement a Queue class, you may not use JavaScript's built in push/pop/shift/unshift functions. You can use an Object or Array to store your data and keep a head and tail pointer that moves around when functions like enqueue and dequeue are called.
