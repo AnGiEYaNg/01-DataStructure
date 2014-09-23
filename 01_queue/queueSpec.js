@@ -51,13 +51,5 @@ describe("queue", function() {
     expect(queue.dequeue()).toEqual(undefined);
     expect(queue.size()).toEqual(0);
   });
-  
-  it('can count elements in queue by traversing the whole queue', function() {
-    queue.enqueue('first');
-    queue.enqueue('second');
-    queue.enqueue('third');
-    expect(queue.countByTraversing()).toEqual(3);
-    expect(queue.countByTraversing()).toEqual(queue.size());
-  });
 
 });
