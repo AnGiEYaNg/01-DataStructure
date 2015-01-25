@@ -21,10 +21,20 @@ describe("linkedList", function() {
     expect(linkedList.addToTail()).toEqual(undefined);
   });
 
-  it("if a single node is added to tail, it should be set to head and tail", function() {
-    linkedList.addToTail('first node');
-    expect(Object.keys(linkedList)).toContain("head");
-    expect(Object.keys(linkedList)).toContain("tail");
+  it("should have a Node class defined to represent a node", function() {
+    expect(Node instanceof Function).toBeTruthy();
+  });
+
+  it("Node class should take a value argument and define next and previous to be null", function() {
+    var node = new Node("test");
+    expect(node.value).toEqual("test");
+    expect(node.next).toEqual(null);
+    expect(node.previous).toEqual(null);
+  });
+
+  it("linkedlist should use Node class to add nodes", function() {
+    linkedList.addToTail('first');
+    expect(linkedList.tail.constructor).toEqual(Node);
   });
 
   it("if a single node is added to head, it should be set to head and tail", function() {
