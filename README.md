@@ -7,3 +7,5 @@ In this workshop, we are going to be writing the JavaScript implementations of s
 ###Important Tip for Queue
 
 Since the purpose of this exercise is to implement a Queue class, you may **not** use JavaScript's built in push/pop/shift/unshift functions. You can use an Object or Array to store your data and keep a head and tail pointer that moves around when functions like enqueue and dequeue are called.
+
+Let's get started!
