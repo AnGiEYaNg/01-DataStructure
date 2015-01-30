@@ -107,4 +107,27 @@ describe("linkedList", function() {
     expect(linkedList.search('four')).toEqual('four');
   });
 
+
+  it("should be able to store and search for objects, not just strings", function() {
+    function UserNode(name, email, city) {
+      this.name = name;
+      this.email = email;
+      this.city = city;
+    }
+    
+    // read more about valueOf here: 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf
+    UserNode.prototype.valueOf = function() {
+      return this.name;
+    };
+    
+    linkedList.addToHead(new UserNode("Nimit", "nimit@fs.com", "New York"));
+    linkedList.addToHead(new UserNode("David", "david@fs.com", "New York"));
+    linkedList.addToHead(new UserNode("Paul", "paul@yc.com", "Mountain View"));
+
+    expect(linkedList.search('Nimit').email).toEqual('nimit@fs.com');
+    expect(linkedList.search('David').city).toEqual("New York");
+    expect(linkedList.search('Paul').name).toEqual('Paul');
+  });
+    
 });
