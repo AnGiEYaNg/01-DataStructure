@@ -107,6 +107,14 @@ describe("linkedList", function() {
     expect(linkedList.search('four')).toEqual('four');
   });
 
+  it("should be able to take strings and functions both as inputs", function() {
+    linkedList.addToTail('one');
+    linkedList.addToTail('two');
+    expect(linkedList.search(function(node) {
+      return node.value === "two";
+    })).toEqual('two');
+  });
+
 
   it("should be able to store and search for objects, not just strings", function() {
     function UserNode(name, email, city) {
