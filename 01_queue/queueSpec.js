@@ -2,7 +2,7 @@ describe("queue", function() {
   var queue;
 
   beforeEach(function() {
-      queue = new Queue();
+    queue = new Queue();
   });
 
   it('should have "enqueue", "dequeue", and "size" methods', function() {
@@ -14,7 +14,7 @@ describe("queue", function() {
   it('should have a size of 0 initially', function() {
     expect(queue.size()).toEqual(0);
   });
-  
+
   it('adding to the queue should increase size by 1', function() {
     queue.enqueue('first in line');
     expect(queue.size()).toEqual(1);
@@ -27,7 +27,7 @@ describe("queue", function() {
     queue.dequeue();
     expect(queue.size()).toEqual(2);
   });
-  
+
   it('the correct item should be returned when dequeing', function() {
     queue.enqueue('first');
     queue.enqueue('second');
@@ -40,7 +40,7 @@ describe("queue", function() {
     expect(queue.dequeue()).toEqual('third');
     expect(queue.size()).toEqual(0);
   });
-  
+
   it('size should not be negative, if size is zero return undefined on dequeue', function() {
     queue.enqueue('first in line');
     expect(queue.size()).toEqual(1);
@@ -50,6 +50,13 @@ describe("queue", function() {
     expect(queue.size()).toEqual(0);
     expect(queue.dequeue()).toEqual(undefined);
     expect(queue.size()).toEqual(0);
+  });
+
+  it('should correctly enqueue, dequeue, enqueue, dequeue', function() {
+    queue.enqueue('a');
+    expect(queue.dequeue()).toEqual('a');
+    queue.enqueue('b');
+    expect(queue.dequeue()).toEqual('b');
   });
 
 });
