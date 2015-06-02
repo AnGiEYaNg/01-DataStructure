@@ -135,6 +135,7 @@
 //   this.previous = null
 // }
 
+//Answer:
 var NUMBUCKETS = 25
 
 var Hash = function() {
@@ -178,7 +179,7 @@ Hash.prototype.hasKey = function(key) {
   return !!this.get(key)
 }
 
-
+//LinkedList Answer copy:
 var LinkedList = function() {
 
 }

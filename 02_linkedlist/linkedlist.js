@@ -76,7 +76,7 @@
 
 
 
-
+//Answer
 var LinkedList = function() {
   this.head
   this.tail
